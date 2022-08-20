@@ -1,4 +1,3 @@
-# this is a API for return a d20 result
 # coding: utf-8
 import random
 import codecs
@@ -18,26 +17,22 @@ class dado:
     while self.jogadas == 1 :
       
       resposta = input(self.frase)
-
-      if(resposta == '0' ):
-        self.Valor(2)
-      else:
-        if(resposta == '1' ):
+      
+      match resposta:
+        case '0':
+          self.Valor(2)
+        case '1':
           self.Valor(4)
-        else:
-          if(resposta == '2' ):
-            self.Valor(6)
-          else:
-            if(resposta == '3' ):
-              self.Valor(8)
-            else:
-              if(resposta == '4' ):
-                self.Valor(10)
-              else:
-                if(resposta == '5' ):
-                  self.Valor(20)
-                else:
-                  print('erro');
+        case '2':
+          self.Valor(6)
+        case '3':
+          self.Valor(8)
+        case '4':
+          self.Valor(10)
+        case '5':
+          self.Valor(20)
+        case _:
+          print('erro')
 
 
   def Valor(self, max):
@@ -54,14 +49,3 @@ class dado:
 
 dado = dado()
 dado.Iniciar()
-
-# abrindo um outro arquivo
-# home = codecs.open("test.html", 'r')
-
-# # criando rota
-# @app.route('/')
-# def front():
-#   return home.read()
-    
-# # executando servidor
-# app.run(host='0.0.0.0')
